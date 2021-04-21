@@ -2,7 +2,8 @@ from django.shortcuts import render
 from .models import Quest, Strength, Endurance, Wisdom, User
 from rest_framework import viewsets
 from rest_framework import permissions
-# from .serializers import QuestSerializer
+from .serializers import QuestSerializer, StrengthSerializer, EnduranceSerializer, WisdomSerializer, UserSerializer
+
 class QuestViewSet(viewsets.ModelViewSet):
     ## The Main Query for the index route
     queryset = Quest.objects.all()

@@ -1,6 +1,9 @@
 from django.db import models
 
-# Create your models here.
+
+class User(models.Model):
+    username = models.CharField(max_length=10)
+
 class Quest(models.Model):
     name = models.CharField(max_length=100)
     stat = models.CharField(max_length=100)
@@ -32,6 +35,3 @@ class Wisdom(models.Model):
         return{f"{self.name.username}'s Wisdom: {self.wisdom}"}
 
 
-
-class User(models.Model):
-    username = models.CharField(max_length=10)
