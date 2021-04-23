@@ -25,4 +25,4 @@ class WisdomSerializer(serializers.HyperlinkedModelSerializer):
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'name', 'user']
+        fields = ['id', 'username']
