@@ -27,17 +27,7 @@ class WisdomViewSet(viewsets.ModelViewSet):
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
-    def get_queryset(self):
-        queryset = User.objects.all()
-        print(self.request)
-        print("This is Console Testing")
-        return queryset
-
-    def perform_create(self, serializer):   
-        queryset = User.objects.filter(username=self.request.data["username"])
-        if queryset.exists():
-            raise serializers.ValidationError('You have already signed up')
-        serializer.save(username=self.request.data["username"])
-
+    def perform_create(self, serializer):  
+        User(username=self.request.data["username"]).save()
     serializer_class = UserSerializer
     permission_classes = [permissions.AllowAny] 
