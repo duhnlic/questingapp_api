@@ -1,1 +1,1 @@
-web: gunicorn quests.wsgi
+web: gunicorn questapp.wsgi
