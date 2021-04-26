@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
+from quests import views as v
 from quests.views import QuestViewSet, StrengthViewSet, EnduranceViewSet, WisdomViewSet, UserViewSet
+
 
 router = routers.DefaultRouter()
 router.register(r'quest', QuestViewSet)
@@ -28,4 +30,6 @@ router.register(r'user', UserViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
+    path('register/', v.register, name="register"),
+    path('', include("django.contrib.auth.urls")),
 ]
