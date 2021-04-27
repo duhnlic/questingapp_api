@@ -23,6 +23,10 @@ class WisdomSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['id', 'name', 'wisdom']
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
+    strength = StrengthSerializer(many=True)
+    endurance = EnduranceSerializer(many=True)
+    wisdom = WisdomSerializer(many=True)
+    quest = QuestSerializer(many=True)
     class Meta:
         model = User
-        fields = ['id', 'username']
+        fields = ['id', 'username', 'strength', 'endurance', 'wisdom', 'quest']
