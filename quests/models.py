@@ -11,6 +11,7 @@ class Quest(models.Model):
     name = models.ForeignKey(User, on_delete=models.CASCADE, related_name="quest")
     stat = models.CharField(max_length=100, default="0")
     total = models.CharField(max_length=100, default="0")
+    kind = models.CharField(max_length=100, default="questing")
 
     def __str__(self):
         return self.name

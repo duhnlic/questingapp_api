@@ -5,7 +5,7 @@ from rest_framework import serializers
 class QuestSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Quest
-        fields = ['id', 'name', 'stat', 'total']
+        fields = ['id', 'name', 'stat', 'total', 'kind']
 
 class StrengthSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
